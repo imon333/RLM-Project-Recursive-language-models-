@@ -1,0 +1,13 @@
+# Security: Never commit API keys
+.env
+
+# Environment: Never commit the library folder (it's huge and machine-specific)
+venv/
+.venv/
+
+# Python Cache: Temporary compiled files
+__pycache__/
+*.pyc
+
+# OS generated files
+.DS_Store
