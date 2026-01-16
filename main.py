@@ -1,16 +1,33 @@
-# This is a sample Python script.
+# main.py
+from src.agent import RLMAgent
+from termcolor import colored
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# Creating a long text that simulates a document
+massive_context = ("This is a filler sentence. " * 1000) + \
+                  " SECRET_PROJECT_ID: 'ORION-99' " + \
+                  ("This is more noise. " * 1000) +\
+                ("Germany is aswesome and very good . " * 1000) + \
+                  " SECRET_MOVIE: 'FURY " + \
+                  ("This is more noise. " * 1000)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def main():
+    print(colored("Starting Recursive Language Model...", "cyan"))
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # Initialize the agent with the "hidden" context
+    agent = RLMAgent(massive_context)
+
+    # The question
+    query = "Search through the context variable and find the SECRET_PROJECT_ID. and Secret Movie"
+
+    answer = agent.solve(query)
+
+    print("\n" + "=" * 50)
+    print(colored(f"THE FINAL ANSWER: {answer}", "green", attrs=["bold"]))
+    print("=" * 50)
+
+
+if __name__ == "__main__":
+    main()
