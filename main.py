@@ -20,7 +20,7 @@ def main():
     agent = RLMAgent(massive_context)
 
     # The question
-    query = "Search through the context variable and find the SECRET_PROJECT_ID."
+    query = "Search through the context variable and find the SECRET_PROJECT_ID. and secret movie"
 
     answer = agent.solve(query)
 

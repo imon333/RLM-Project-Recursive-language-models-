@@ -1,3 +1,4 @@
+#repl
 import io
 import sys
 from termcolor import colored
