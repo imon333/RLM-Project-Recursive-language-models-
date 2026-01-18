@@ -16,7 +16,7 @@ class RLMAgent:
     def solve(self, user_query):
         self.history.append({"role": "user", "content": f"Task: {user_query}"})
 
-        for i in range(100):  # Limit to 5 steps to save tokens/money
+        for i in range(15):  # Limit to 5 steps to save tokens/money
             print(colored(f"\n--- Iteration {i + 1} ---", "magenta", attrs=["bold"]))
 
             # 1. Root Model decides what to do
